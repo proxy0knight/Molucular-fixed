@@ -1,6 +1,20 @@
 class Renderer3D {
-    constructor(canvasId) {
-        this.canvas = document.getElementById(canvasId);
+    constructor(canvasId = 'canvas-container') {
+        // إنشاء عنصر الكانفاس
+        this.canvas = document.createElement('canvas');
+        this.canvas.id = 'molecular-canvas';
+        this.canvas.style.display = 'block';
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '100%';
+        
+        // إضافة الكانفاس إلى الحاوي
+        const container = document.getElementById(canvasId);
+        if (container) {
+            container.appendChild(this.canvas);
+        } else {
+            document.body.appendChild(this.canvas);
+        }
+        
         this.scene = null;
         this.camera = null;
         this.renderer = null;
@@ -520,4 +534,7 @@ class Renderer3D {
         this.controls.dispose();
     }
 }
+
+// تصدير الفئة للاستخدام كوحدة
+window.Renderer3D = Renderer3D;
 
