@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محاكي الهياكل الجزيئية والذرية المتقدم</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <h1>مرحباً بك في محاكي الهياكل الجزيئية المتقدم!</h1>
+        <p>استكشف عالم الذرات والجزيئات بفيزياء واقعية وتحكم كامل.</p>
+        <button id="start-exploration-btn">ابدأ الاستكشاف</button>
+    </div>
+    <div id="app-container"></div>
+
+    <!-- تحميل المكتبات والسكريبتات -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="js/atom.js"></script>
+    <script src="js/molecule.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- سكريبت التحكم في رسالة الترحيب -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const startButton = document.getElementById("start-exploration-btn");
+            if (startButton) {
+                startButton.addEventListener("click", () => {
+                    document.getElementById("loading-screen").classList.add("hidden");
+                    // هنا يمكنك بدء المحاكاة أو تهيئة النظام
+                    // window.molecularSystem = new MolecularSystem(); // إذا لم يتم تهيئته تلقائياً
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
