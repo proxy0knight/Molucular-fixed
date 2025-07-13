@@ -32,12 +32,12 @@
             if (startButton) {
                 startButton.addEventListener("click", () => {
                     document.getElementById("loading-screen").classList.add("hidden");
-                    // هنا يمكنك بدء المحاكاة أو تهيئة النظام
-                    // window.molecularSystem = new MolecularSystem(); // إذا لم يتم تهيئته تلقائياً
+                    window.molecularSystem = new MolecularSystem(); // تهيئة النظام عند النقر على الزر
                 });
             }
         });
     </script>
 </body>
 </html>
+
 

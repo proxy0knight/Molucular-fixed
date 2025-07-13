@@ -3,7 +3,11 @@ class MolecularSystem {
         this.atoms = {}; // تخزين الذرات بواسطة ID
         this.molecules = {}; // تخزين الجزيئات بواسطة ID
         this.renderer = new Renderer3D();
+        
+        // تهيئة PhysicsEngine هنا قبل UIManager
         this.physicsEngine = new PhysicsEngine(Object.values(this.atoms), Object.values(this.molecules), new THREE.Vector3(50, 50, 50)); // حدود افتراضية
+        this.physicsEngine.resetToDefaults(); // ضمان تهيئة جميع الخصائص الافتراضية
+
         this.uiManager = new UIManager(this);
 
         this.simulationRunning = false;
@@ -499,12 +503,17 @@ class MolecularSystem {
             this.uiManager.showAlert("لا توجد حالة محاكاة محفوظة.", "warning");
         }
     }
+
+    startSimulation() {
+        this.simulationRunning = true;
+        this.uiManager.showAlert("بدء المحاكاة");
+    }
 }
 
-window.MolecularSystem = MolecularSystem;
+// لا تقم بتهيئة MolecularSystem هنا، بل اتركها لـ index_advanced.html
+// window.molecularSystem = new MolecularSystem();
 
-// بدء التطبيق عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", () => {
-    window.molecularSystem = new MolecularSystem();
-});
+
+
+
 

@@ -20,6 +20,9 @@ class Renderer3D {
         const gridHelper = new THREE.GridHelper(100, 100);
         this.scene.add(gridHelper);
 
+        // إضافة خلفية للمشهد
+        this.scene.background = new THREE.Color(0x000000); // خلفية سوداء
+
         window.addEventListener("resize", this.onWindowResize.bind(this), false);
     }
 
@@ -45,4 +48,5 @@ class Renderer3D {
     // تصدير الفئة للاستخدام كوحدة
 }
 window.Renderer3D = Renderer3D;
+
 
