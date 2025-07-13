@@ -373,8 +373,8 @@ class UIManager {
         document.getElementById("stat-pressure").textContent = `${this.system.physicsEngine.systemPressure.toFixed(2)} Pa`;
         document.getElementById("stat-density").textContent = `${this.system.physicsEngine.systemDensity.toFixed(2)} kg/m³`;
         document.getElementById("stat-space-volume").textContent = `${(this.system.physicsEngine.bounds.x * 2 * this.system.physicsEngine.bounds.y * 2 * this.system.physicsEngine.bounds.z * 2).toFixed(2)} m³`;
-        document.getElementById("stat-fps").textContent = this.system.fps.toFixed(0);
-        document.getElementById("stat-frame-time").textContent = this.system.frameTime.toFixed(2);
+        document.getElementById("stat-fps").textContent = this.system.fps;
+        document.getElementById("stat-frame-time").textContent = this.system.frameTime;
     }
 
     initEventListeners() {
